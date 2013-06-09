@@ -41,7 +41,6 @@ class SportsController < ApplicationController
   # POST /sports.json
   def create
     @sport = Sport.new(params[:sport])
-
     respond_to do |format|
       if @sport.save
         format.html { redirect_to @sport, notice: 'Sport was successfully created.' }
