@@ -10,13 +10,20 @@ h1 {
 table {
     margin-right: auto;
     margin-left: auto;
-    border: 2px solid black;
+    border: 4px solid black;
+}
+
+.login-thumb {
+    margin-right: 2px;
+    border: 3px solid black;
+    border-radius: 3px;
 }
 
 .login {
     text-align: right;
     margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
+
 }
 .logo {
     margin-right: auto;
