@@ -1,4 +1,6 @@
 PickUpSports::Application.routes.draw do
+  devise_for :users
+
   resources :sports
   root :to => 'sports#index'
 
