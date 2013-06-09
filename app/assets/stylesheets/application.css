@@ -12,6 +12,12 @@ table {
     margin-left: auto;
     border: 2px solid black;
 }
+
+.login {
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 20px;
+}
 .logo {
     margin-right: auto;
     margin-left: auto;
@@ -20,3 +26,15 @@ table {
     border-bottom: 3px solid black;
 
 }
+
+#map-canvas {
+    height: 300px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+

@@ -6,11 +6,41 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmG5AMSt0spzB0RWDAGFTiVO_L28T3k94&sensor=false">
+</script>
+<script type="text/javascript">
+  function initialize() {
+    var mapOptions = {
+      center: new google.maps.LatLng(40.7308228, -73.997332),
+      zoom: 12,
+      // mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+
 <body>
+<div class="login">
+    <% if user_signed_in? %> 
+        Welcome <%= current_user.email %> 
+        <%= link_to "Sign out",destroy_user_session_path%>
+    <% else %>
+        <%= link_to "Sign up", new_user_registration_path%> or <%= link_to "Sign in", new_user_session_path%>
+    <% end %> 
+</div>
+
 <div class="logo">
     <h1>FINAL PROJECT</h1>
 </div>
-<%= yield %>
 
+<%= yield %>
+<br><br><br>
+<div id="map-canvas"/>
 </body>
 </html>
