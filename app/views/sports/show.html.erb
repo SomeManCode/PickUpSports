@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Address:</b>
+  <%= @sport.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @sport.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @sport.longitude %>
+</p>
+
+<p>
+  <b>Needed:</b>
+  <%= @sport.needed %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%= @sport.game %>
+</p>
+
+
+<%= link_to 'Edit', edit_sport_path(@sport) %> |
+<%= link_to 'Back', sports_path %>

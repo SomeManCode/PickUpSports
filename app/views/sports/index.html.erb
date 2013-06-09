@@ -1,0 +1,29 @@
+<h2>Find a game</h2>
+
+<table>
+  <tr>
+    <th>Posted by</th>
+    <th>Address</th>
+    <th>Needed</th>
+    <th>Game</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sports.each do |sport| %>
+  <tr>
+    <td>User</td>
+    <td><%= sport.address %></td>
+    <td><%= sport.needed %></td>
+    <td><%= sport.game %></td>
+    <td><%= link_to 'Show', sport %></td>
+    <td><%= link_to 'Edit', edit_sport_path(sport) %></td>
+    <td><%= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sport', new_sport_path %>
