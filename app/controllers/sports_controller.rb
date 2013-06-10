@@ -1,6 +1,5 @@
 class SportsController < ApplicationController
-  # GET /sports
-  # GET /sports.json
+  
   def index
     @sports = Sport.all
 
@@ -10,8 +9,6 @@ class SportsController < ApplicationController
     end
   end
 
-  # GET /sports/1
-  # GET /sports/1.json
   def show
     @sport = Sport.find(params[:id])
 
@@ -21,10 +18,9 @@ class SportsController < ApplicationController
     end
   end
 
-  # GET /sports/new
-  # GET /sports/new.json
   def new
     @sport = Sport.new
+    @sport.user_id = current_user.id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,10 +33,10 @@ class SportsController < ApplicationController
     @sport = Sport.find(params[:id])
   end
 
-  # POST /sports
-  # POST /sports.json
   def create
     @sport = Sport.new(params[:sport])
+    #saves the user as the current user when created
+    #@sport.user = current_user
     respond_to do |format|
       if @sport.save
         format.html { redirect_to @sport, notice: 'Sport was successfully created.' }

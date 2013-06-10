@@ -1,4 +1,9 @@
-<%= form_for(@sport) do |f| %>
+<%= form_for Sport.new(:user_id => current_user.id) do |f| %>
+
+  <div class="field">
+    <%= f.label :huh %><br />
+    <%= f.text_field :user_id %>
+  </div>
 
   <div class="field">
     <%= f.label :address %><br />

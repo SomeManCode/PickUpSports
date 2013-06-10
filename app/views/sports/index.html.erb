@@ -13,7 +13,7 @@
 
 <% @sports.each do |sport| %>
   <tr>
-    <td>User</td>
+    <td><%= image_tag sport.user.avatar.thumb.url, :class => "login-thumb" %><%= sport.user.username %></td>
     <td><%= sport.game %></td>    
     <td><%= sport.address %></td>
     <td><%= sport.needed %></td>
