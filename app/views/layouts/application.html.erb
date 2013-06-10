@@ -37,7 +37,12 @@
     <h1>FINAL PROJECT</h1>
 </div>
 
-<input type="text" class="text-input" id="filter" value="" placeholder="Search for a game"/>
+<%= form_tag sports_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  <p>
+<% end %>
 
 <%= yield %>
 <br><br><br>

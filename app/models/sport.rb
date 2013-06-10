@@ -10,4 +10,11 @@ class Sport < ActiveRecord::Base
      "#{self.address}"', '"#{self.state}"', '"#{self.zipcode}"
   end
 
+  def self.search(search)
+    if search
+        find(:all, :conditions => ['game LIKE ?', "%#{search}"])
+    else
+        find(:all)
+    end
+  end
 end

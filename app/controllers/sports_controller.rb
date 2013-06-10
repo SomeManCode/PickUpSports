@@ -1,7 +1,7 @@
 class SportsController < ApplicationController
   
   def index
-    @sports = Sport.all
+    @sports = Sport.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
