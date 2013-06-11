@@ -64,8 +64,6 @@ class SportsController < ApplicationController
     end
   end
 
-  # DELETE /sports/1
-  # DELETE /sports/1.json
   def destroy
     @sport = Sport.find(params[:id])
     @sport.destroy
