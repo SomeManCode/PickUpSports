@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-    it { should has_many(:sports) }
+    it { should have_many(:sports) }
     before do
         @user1 = User.create(:username => "StraightBallin", :avatar => "pic")
     end
