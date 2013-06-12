@@ -11,19 +11,22 @@ describe Sport do
     it "should have basketball games" do
         Sport.find_by_game("basketball").should_not eq(nil)
         basketball = @basketball
-        basketball.should_not eq(nil)   
+        basketball.should_not eq(nil)
+        basketball.game.should eq("basketball")
     end
 
     it "should have soccer games" do
         Sport.find_by_game("soccer").should_not eq(nil)
         soccer = @soccer
         soccer.should_not eq(nil)
+        soccer.game.should eq("soccer")
     end
 
     it "should have baseball games" do
         Sport.find_by_game("baseball").should_not eq(nil)
         baseball = @baseball
-        baseball.should_not eq(nil)    
+        baseball.should_not eq(nil) 
+        baseball.game.should eq("baseball")   
     end
 
     it "should have a location" do

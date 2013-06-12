@@ -4,10 +4,7 @@ describe User do
     it { should have_many(:sports) }
     before do
         @user1 = User.create(:username => "StraightBallin", :avatar => "pic")
-    end
-
-    it "should be created" do
-        @user1.should_not eq(nil)
+        @user2 = User.create(:username => "JustUserTwo", :avatar => "pic2")
     end
 
     it "should have a username" do
