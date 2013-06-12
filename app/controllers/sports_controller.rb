@@ -76,8 +76,12 @@ class SportsController < ApplicationController
 
   def attend
     @sport = Sport.find(params[:id])
-    @sport.needed = @sport.needed - 1
-    @sport.save
-    redirect_to sports_path
+    if @sport.needed > 1
+      @sport.needed = @sport.needed - 1
+      @sport.save
+      redirect_to sports_path
+    else
+      @sport.destroy
+    end
   end
 end
