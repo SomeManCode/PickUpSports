@@ -3,7 +3,11 @@ PickUpSports::Application.routes.draw do
   devise_for :users do 
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end
-  resources :sports
+  resources :sports do
+    member do
+      post :attend
+    end
+  end
   root :to => 'sports#index'
 
   # The priority is based upon order of creation:

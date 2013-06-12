@@ -36,7 +36,7 @@ class SportsController < ApplicationController
   def create
     @sport = Sport.new(params[:sport])
     #saves the user as the current user when created
-    #@sport.user = current_user
+    @sport.user = current_user
     respond_to do |format|
       if @sport.save
         format.html { redirect_to @sport, notice: 'Sport was successfully created.' }
@@ -72,5 +72,12 @@ class SportsController < ApplicationController
       format.html { redirect_to sports_url }
       format.json { head :no_content }
     end
+  end
+
+  def attend
+    @sport = Sport.find(params[:id])
+    @sport.needed = @sport.needed - 1
+    @sport.save
+    redirect_to sports_path
   end
 end
