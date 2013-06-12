@@ -14,7 +14,7 @@
 $(function() {
   initialize();
   <% Sport.all.each do |t| %>
-  putMarker(<%= t.latitude %>, <%= t.longitude %>);
+  putMarker(<%= t.latitude %>, <%= t.longitude %>, "<%= t.game %>");
   <% end %>
 });
 

@@ -3,23 +3,36 @@ var map;
 function initialize() {
     var myLocation = new google.maps.LatLng(40.7308228, -73.997332);
     var mapOptions = {
-        zoom: 12,
+        zoom: 10,
         center: myLocation,
         myTypeId: google.maps.MapTypeId.ROADMAP
     };
      map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 }
 //a function that takes in latitude, longitude, and name
-function putMarker(latitude, longitude) {
+function putMarker(latitude, longitude, name) {
     //creates a new object with latitude and longitude
     var sportLatLong = new google.maps.LatLng(latitude, longitude);
-    console.log(sportLatLong);
+    //creates images, and assigns it to the appropiately according to name
     var b1 = "<%= asset_path 'bball.png'%>";
     var b2 = "<%= asset_path 'baseball.png' %>";
     var b3 = "<%= asset_path 'soccer.png' %>";
+    var icon;
+    if (name=="Baseball")
+    {
+        icon = b2;
+    }
+    else if (name=="Basketball")
+    {
+        icon = b1;
+    }
+    else
+    {
+        icon = b3;
+    }
     var marker = new google.maps.Marker({
         position: sportLatLong,
         map: map,
-        icon: b3
+        icon: icon
     });
 }
