@@ -10,17 +10,14 @@
 <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmG5AMSt0spzB0RWDAGFTiVO_L28T3k94&sensor=false">
 </script>
-<script type="text/javascript">
-  function initialize() {
-    var mapOptions = {
-      center: new google.maps.LatLng(40.7308228, -73.997332),
-      zoom: 12,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("map-canvas"),
-        mapOptions);
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
+<script>
+$(function() {
+  initialize();
+  <% Sport.all.each do |t| %>
+  putMarker(<%= t.latitude %>, <%= t.longitude %>);
+  <% end %>
+});
+
 </script>
 
 <body>
