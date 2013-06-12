@@ -40,4 +40,9 @@ describe Sport do
         game3.address.should_not eq(nil)
     end
 
+    it "should be attendable" do
+        @sport = Sport.find_by_game("soccer")
+        attender = @sport.needed - 1 
+        @sport.attend.should eq(attender)
+    end
 end
