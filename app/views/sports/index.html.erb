@@ -1,4 +1,10 @@
 <h1></h1>
+<%= form_tag sports_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  <p>
+<% end %>
 
 <table>
   <tr>
@@ -12,14 +18,11 @@
   </tr>
 
 <% @sports.each do |sport| %>
-  <tr>
+  <tr id="<%=sport.id%>">
     <td><%= image_tag sport.user.avatar.thumb.url, :class => "login-thumb" %><%= sport.user.username %></td>
     <td><%= sport.game %></td>    
     <td><%= sport.address %></td>
     <td><%= sport.needed %></td>
-    <td><%= link_to 'Show', sport %></td>
-    <td><%= link_to 'Edit', edit_sport_path(sport) %></td>
-    <td><%= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <td><%= button_to 'Attend', attend_sport_path(sport.id), :method => :post %></td>
   </tr>
 <% end %>

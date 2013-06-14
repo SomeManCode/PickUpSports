@@ -79,9 +79,9 @@ class SportsController < ApplicationController
     if @sport.needed > 1
       @sport.needed = @sport.needed - 1
       @sport.save
-      redirect_to sports_path
     else
       @sport.destroy
     end
+      redirect_to sports_path
   end
 end

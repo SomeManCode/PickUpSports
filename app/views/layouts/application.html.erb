@@ -35,14 +35,8 @@ $(function() {
     <h1>FINAL PROJECT</h1>
 </div>
 
-<%= form_tag sports_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  <p>
-<% end %>
-
 <%= yield %>
+
 <br><br><br>
 <div id="map-canvas"/>
 </body>
