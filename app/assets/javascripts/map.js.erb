@@ -3,14 +3,14 @@ var map;
 function initialize() {
     var myLocation = new google.maps.LatLng(40.7308228, -73.997332);
     var mapOptions = {
-        zoom: 9,
+        zoom: 10,
         center: myLocation,
         myTypeId: google.maps.MapTypeId.ROADMAP
     };
      map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 }
 //a function that takes in latitude, longitude, and name
-function putMarker(latitude, longitude, name) {
+function addMarker(latitude, longitude, name) {
     //creates a new object with latitude and longitude
     var sportLatLong = new google.maps.LatLng(latitude, longitude);
     //creates images, and assigns it to the appropiately according to name

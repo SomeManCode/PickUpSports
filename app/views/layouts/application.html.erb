@@ -14,8 +14,7 @@
 $(function() {
   initialize();
   <% Sport.all.each do |t| %>
-  // t.game is in quotes because 
-  putMarker(<%= t.latitude %>, <%= t.longitude %>, "<%= t.game %>");
+  addMarker(<%= t.latitude %>, <%= t.longitude %>, "<%= t.game %>");
   <% end %>
 });
 
@@ -32,7 +31,7 @@ $(function() {
 </div>
 
 <div class="logo">
-    <h1>FINAL PROJECT</h1>
+    <h1>My Amazing Final Project</h1>
 </div>
 
 <%= yield %>
