@@ -28,15 +28,12 @@ class SportsController < ApplicationController
     end
   end
 
-  # GET /sports/1/edit
-  def edit
-    @sport = Sport.find(params[:id])
-  end
 
   def create
     @sport = Sport.new(params[:sport])
     #saves the user as the current user when created
     @sport.user = current_user
+    
     respond_to do |format|
       if @sport.save
         format.html { redirect_to @sport, notice: 'Sport was successfully created.' }

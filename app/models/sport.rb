@@ -12,6 +12,7 @@ class Sport < ActiveRecord::Base
 
   def self.search(search)
     if search
+      #uses active record to search database for gametypes with regular expression
         find(:all, :conditions => ['game LIKE ?', "%#{search}"])
     else
         find(:all)
