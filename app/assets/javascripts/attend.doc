@@ -1,0 +1,10 @@
+$document.ready(function {
+    function handleResponse(data) {
+        console.log(data);
+    }
+    $.ajax ({
+        url: "sports/<%=sport.id%>/attend",
+        dataType: 'json',
+        success: handleResponse
+    })
+})

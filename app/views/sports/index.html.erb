@@ -1,8 +1,8 @@
 <h1></h1>
 <%= form_tag sports_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search], :class => "search" %>
+    <%= submit_tag "Search", :name => nil, :class => "button" %>
   <p>
 <% end %>
 
@@ -31,4 +31,10 @@
 
 <br/>
 
-<%= link_to 'GAME', new_sport_path %>
+<a href="#" data-reveal-id="myModal"><button type="button">Create Game</button></a>
+<div id="myModal" class="reveal-modal">
+  <h2>Create a Game</h2>
+  <p><%= render 'form' %></p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+

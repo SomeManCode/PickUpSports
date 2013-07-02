@@ -5,7 +5,7 @@ class Sport < ActiveRecord::Base
   after_validation :geocode
 
   belongs_to :user
-
+  validates_numericality_of :needed, :greater_than => 0
   def geolocate
      "#{self.address}"', '"#{self.state}"', '"#{self.zipcode}"
   end
