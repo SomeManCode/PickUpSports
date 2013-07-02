@@ -44,4 +44,11 @@ table {
     width: 1026px;
 }
 
+.search-section {
+    padding-left: 20px;
+}
+
+.create-game-button {
+    text-align: center;
+}
  *= require foundation_and_overrides
