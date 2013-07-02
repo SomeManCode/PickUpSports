@@ -2,10 +2,6 @@
  *= require_self
  *= require_tree .
  */
-h1 {
-    font-size: 50px;
-    text-align: center
-}
 
 table {
     margin-right: auto;
@@ -13,7 +9,7 @@ table {
 }
 
 .login-thumb {
-    margin-right: 2px;
+    margin-top: 6px;
     border: 3px solid black;
     border-radius: 3px;
 }
@@ -21,17 +17,8 @@ table {
 .login {
     text-align: right;
     margin-right: 10px;
-    margin-top: 30px;
-
 }
-.logo {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 60px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
 
-}
 
 #map-canvas {
     height: 300px;
@@ -40,8 +27,12 @@ table {
     margin-left: auto;
 }
 
+.sportable {
+    float: left;
+}
 
-
-
+.top-bar {
+    color: white !important;
+}
 
  *= require foundation_and_overrides
