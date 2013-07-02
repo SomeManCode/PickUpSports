@@ -76,8 +76,10 @@ class SportsController < ApplicationController
     if @sport.needed > 1
       @sport.needed = @sport.needed - 1
       @sport.save
+      # format.json { render :json => @sport.needed }
     else
       @sport.destroy
+      # sport.needed = 0
     end
       redirect_to sports_path
   end

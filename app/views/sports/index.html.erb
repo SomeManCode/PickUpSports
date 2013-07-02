@@ -23,7 +23,8 @@
     <td><%= sport.game %></td>    
     <td><%= sport.address %></td>
     <td><%= sport.needed %></td>
-    <td><%= button_to 'Attend', attend_sport_path(sport.id), :method => :post %></td>
+    <td id="needed-<%=sport.id%>"><%= button_to 'Attend', attend_sport_path(sport.id), :method => :post, :class => "tiny button" %></td>
+    <!-- removed remote true dont forget to add it in -->
   </tr>
 <% end %>
 </table>
