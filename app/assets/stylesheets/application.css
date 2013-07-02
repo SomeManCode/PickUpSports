@@ -39,4 +39,9 @@ table {
     width: 10% !important;
 }
 
+.street {
+    height: 370px;
+    width: 1026px;
+}
+
  *= require foundation_and_overrides
