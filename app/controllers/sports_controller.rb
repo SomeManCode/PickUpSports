@@ -76,11 +76,13 @@ class SportsController < ApplicationController
     if @sport.needed > 1
       @sport.needed = @sport.needed - 1
       @sport.save
-      # format.json { render :json => @sport.needed }
+      render :partial => 'update_attend_count', :locals => { :sport => @sport }
     else
+      deleted_sport = @sport
+      # @sport.destroy
+      render :partial => 'delete_row', :locals => { :sport => @sport}
       @sport.destroy
-      # sport.needed = 0
     end
-      redirect_to sports_path
+     
   end
 end

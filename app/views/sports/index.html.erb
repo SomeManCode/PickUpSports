@@ -21,8 +21,8 @@
     <td><%= image_tag sport.user.avatar.thumb.url, :class => "login-thumb" %><%= sport.user.username %></td>
     <td><%= sport.game %></td>    
     <td><%= sport.address %></td>
-    <td><%= sport.needed %></td>
-    <td id="needed-<%=sport.id%>"><%= button_to 'Attend', attend_sport_path(sport.id), :method => :post, :class => "tiny button" %></td>
+    <td id="needed-<%=sport.id%>"><%= sport.needed %></td>
+    <td><%= button_to 'Attend', attend_sport_path(sport), :class => "tiny button", remote: true %></td>
     <!-- removed remote true dont forget to add it in -->
   </tr>
 <% end %>
