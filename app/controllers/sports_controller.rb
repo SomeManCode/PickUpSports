@@ -78,7 +78,6 @@ class SportsController < ApplicationController
       @sport.save
       render :partial => 'update_attend_count', :locals => { :sport => @sport }
     else
-      deleted_sport = @sport
       # @sport.destroy
       render :partial => 'delete_row', :locals => { :sport => @sport}
       @sport.destroy

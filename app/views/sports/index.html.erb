@@ -17,7 +17,7 @@
   </tr>
 
 <% @sports.each do |sport| %>
-  <tr id="<%=sport.id%>">
+  <tr id="sport-<%=sport.id%>">
     <td><%= image_tag sport.user.avatar.thumb.url, :class => "login-thumb" %><%= sport.user.username %></td>
     <td><%= sport.game %></td>    
     <td><%= sport.address %></td>
