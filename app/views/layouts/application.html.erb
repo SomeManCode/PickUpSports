@@ -14,12 +14,11 @@
 </script>
 <script>
 $(function() {
-  initialize();
+  setMap();
   <% Sport.all.each do |t| %>
   addMarker(<%= t.latitude %>, <%= t.longitude %>, "<%= t.game %>");
   <% end %>
 });
-
 </script>
 
 <body>
