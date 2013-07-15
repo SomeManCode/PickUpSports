@@ -7,6 +7,9 @@ table {
     margin-right: auto;
     margin-left: auto;
 }
+.sportable {
+    padding-left: 10px;
+}
 
 .login-thumb {
     margin-top: 6px;
